@@ -1,0 +1,14 @@
+[Unit]
+Description=HttpShell Service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=popi
+WorkingDirectory=/home/popi/http-shell
+ExecStart=/home/popi/http-shell/venv/bin/python app.py
+#Restart=on-abort
+#EnvironmentFile=/etc/sysconfig/fooservice.env
+
+[Install]
+WantedBy=multi-user.target
